@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionMascotas.RegistroMascotasPage"
+             Title="Nueva Mascota">
+    <VerticalStackLayout Spacing="15" Padding="20">
+        <Entry x:Name="entNombre" Placeholder="Nombre de la mascota" />
+        <Entry x:Name="entEspecie" Placeholder="Especie (Perro, Gato...)" />
+        <Entry x:Name="entEdad" Placeholder="Edad" Keyboard="Numeric" />
+
+        <Button Text="Guardar Mascota" Clicked="OnGuardarClicked" />
+    </VerticalStackLayout>
+</ContentPage>

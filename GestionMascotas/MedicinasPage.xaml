@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionMascotas.MedicinasPage"
+             Title="Inventario Medicinas">
+    <Grid RowDefinitions="Auto, *" Padding="10" RowSpacing="10">
+        <VerticalStackLayout Grid.Row="0" Spacing="10" BackgroundColor="#f0f0f0" Padding="10">
+            <Label Text="Agregar Medicina" FontAttributes="Bold"/>
+            <Entry x:Name="entNombreMed" Placeholder="Nombre Medicina"/>
+            <Entry x:Name="entDosis" Placeholder="Dosis (ej: 10mg)"/>
+            <Button Text="Agregar" Clicked="OnAgregarClicked"/>
+        </VerticalStackLayout>
+
+        <ListView Grid.Row="1" x:Name="lstMedicinas">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <HorizontalStackLayout Spacing="10" Padding="10">
+                            <Label Text="{Binding NombreMedicina}" FontAttributes="Bold"/>
+                            <Label Text="-" />
+                            <Label Text="{Binding Dosis}" />
+                            <Button Text="X" BackgroundColor="Red" 
+                                    CommandParameter="{Binding Id}" 
+                                    Clicked="OnEliminarClicked" 
+                                    WidthRequest="40" HeightRequest="35"/>
+                        </HorizontalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

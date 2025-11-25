@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionMascotas.CitasVeterinariasPage"
+             Title="Citas Veterinarias">
+    <Grid RowDefinitions="Auto, *" Padding="10" RowSpacing="10">
+
+        <VerticalStackLayout Grid.Row="0" Spacing="10" BackgroundColor="#e0f7fa" Padding="10">
+            <Label Text="Agendar Cita" FontAttributes="Bold"/>
+            <Entry x:Name="entMascotaCita" Placeholder="Nombre Mascota"/>
+            <Entry x:Name="entMotivo" Placeholder="Motivo (ej: Vacuna)"/>
+            <DatePicker x:Name="dpFecha" />
+            <Button Text="Agendar" Clicked="OnAgendarClicked"/>
+        </VerticalStackLayout>
+
+        <ListView Grid.Row="1" x:Name="lstCitas">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout Padding="10">
+                            <Label Text="{Binding NombreMascota, StringFormat='Mascota: {0}'}" FontAttributes="Bold"/>
+                            <Label Text="{Binding Motivo}" />
+                            <Label Text="{Binding Fecha, StringFormat='{0:dd/MM/yyyy}'}" TextColor="Blue"/>
+                            <Button Text="Cancelar Cita" BackgroundColor="OrangeRed" 
+                                    CommandParameter="{Binding Id}"
+                                    Clicked="OnEliminarCitaClicked" Margin="0,5,0,0"/>
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

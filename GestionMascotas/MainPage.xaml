@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GestionMascotas.MainPage"
+             Title="Menú Principal">
+
+    <VerticalStackLayout Spacing="20" Padding="30" VerticalOptions="Center">
+        <Label Text="Hola, Admin!" FontSize="24" HorizontalOptions="Center" />
+        <BoxView Color="Gray" HeightRequest="1" />
+
+        <Button Text="Registrar Mascota" Clicked="IrRegistroMascotas" />
+        <Button Text="Lista de Mascotas" Clicked="IrListaMascotas" />
+        <Button Text="Medicinas" Clicked="IrMedicinas" />
+        <Button Text="Citas Veterinarias" Clicked="IrCitas" />
+
+        <Button Text="Cerrar Sesión" BackgroundColor="Red" Clicked="OnLogoutClicked" Margin="0,30,0,0"/>
+    </VerticalStackLayout>
+</ContentPage>
